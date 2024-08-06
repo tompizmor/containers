@@ -10,7 +10,7 @@
 # 3. Environment variables overridden via external files using *_FILE variables (see below)
 # 4. Environment variables set externally (i.e. current Bash context/Dockerfile/userdata)
 
-# Load logging library
+# Load logging library change here
 # shellcheck disable=SC1090,SC1091
 . /opt/bitnami/scripts/liblog.sh
 
