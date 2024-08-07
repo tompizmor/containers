@@ -5,7 +5,7 @@ version: '2'
 
 services:
   postgresql:
-    image: docker.io/bitnami/postgresql:16
+    image: registry-1.docker.io/bitnami/postgresql:16
     volumes:
       - 'postgresql_data:/bitnami/postgresql'
     environment:
@@ -15,14 +15,14 @@ services:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
   redis:
-    image: docker.io/bitnami/redis:7.0
+    image: registry-1.docker.io/bitnami/redis:7.2
     volumes:
       - 'redis_data:/bitnami'
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
   airflow-scheduler:
-    image: docker.io/bitnami/airflow-scheduler:2
+    image: registry-1.docker.io/bitnami/airflow-scheduler:2
     environment:
       - AIRFLOW_DATABASE_NAME=bitnami_airflow
       - AIRFLOW_DATABASE_USERNAME=bn_airflow
@@ -30,7 +30,7 @@ services:
       - AIRFLOW_EXECUTOR=CeleryExecutor
       - AIRFLOW_WEBSERVER_HOST=airflow
   airflow-worker:
-    image: docker.io/bitnami/airflow-worker:2
+    image: registry-1.docker.io/bitnami/airflow-worker:2
     environment:
       - AIRFLOW_DATABASE_NAME=bitnami_airflow
       - AIRFLOW_DATABASE_USERNAME=bn_airflow
@@ -38,7 +38,7 @@ services:
       - AIRFLOW_EXECUTOR=CeleryExecutor
       - AIRFLOW_WEBSERVER_HOST=airflow
   airflow:
-    image: docker.io/bitnami/airflow:2
+    image: registry-1.docker.io/bitnami/airflow:2
     environment:
       - AIRFLOW_DATABASE_NAME=bitnami_airflow
       - AIRFLOW_DATABASE_USERNAME=bn_airflow
